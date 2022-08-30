@@ -4,7 +4,7 @@ import { Chart as Chartjs } from 'chart.js/auto'
 import { Line, Bar, getDatasetAtEvent } from 'react-chartjs-2'
 import axios from 'axios'
 
-function BarChart() {
+function ShowChart() {
     const [apiData, setApiData] = useState([])
     const url = 'https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=30'
 
@@ -17,16 +17,16 @@ function BarChart() {
         GetData()
     }, [])
 
-    const volumeData = apiData.prices.map(el => el[1])
-    const volumeLabels = apiData.total_volumes.map(el => new Date(el[0]).getDate().toString()).map(el => el.length === 1 ? `0${el}` : el)
+    // const volumeData = apiData.prices.map(el => el[1])
+    // const volumeLabels = apiData.total_volumes.map(el => new Date(el[0]).getDate().toString()).map(el => el.length === 1 ? `0${el}` : el)
 
     const data = {
-        labels: volumeLabels,
+        labels: ['1'],
         datasets: [{
             label: 'Crypto',
             backgroundColor: '#60c9ec',
             borderColor: '#60c9ec',
-            data: volumeData
+            data: [1]
         }]
     }
     return (
@@ -37,4 +37,4 @@ function BarChart() {
     )
 }
 
-export default BarChart
+export default ShowChart
