@@ -52,6 +52,12 @@ const Coin = ({ image }) => {
                     </div> */}
                 </div>
             </div>
+            {/* <div className="CoinInfo">
+                <p className="CoinName Info">Market Cap:</p>
+                <p>${coin.market_data.market_cap.usd}</p>
+                <p className="CoinName Info">Circulating Supply:</p>
+                <p>{coin.market_data.circulating_supply}</p>
+            </div> */}
             {/* <div className="Content">
             <table>
                 <thead>
