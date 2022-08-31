@@ -2,7 +2,7 @@ import { useState } from 'react'
 import axios from 'axios'
 import { AppHeader, Border, BorderHeader, BordersAround, BorderLeft, SideBorders, BorderRight, Charts, CoinCharts, CoinTable, ListHeader, StyledForm, StyledInput, CoinHeader, CoinList, CoinContainer, CoinDiv } from './components/app.styles'
 import { Routes, Route, Link } from 'react-router-dom';
-import BarChart from './charts/Bar'
+import BarChart from './charts/Chart'
 import APPTITLE from './components/APPTITLE';
 import LISTHEADER from './components/LISTHEADER';
 import COINHEADER from './components/COINHEADER';
@@ -146,9 +146,9 @@ function App() {
           <BorderRight />
         </SideBorders>
       </BordersAround>
-      <div className="border">
+      <Border>
         <div className="border-footer"></div>
-      </div>
+      </Border>
     </div>
   );
 }
