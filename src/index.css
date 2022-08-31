@@ -123,3 +123,70 @@ select:hover {
   border: 1px solid rgba(0, 0, 0, .1);
   transform: scale(1.05)
 }
+
+/* Routing */
+.Link {
+  color: var(--accent-color);
+  transition: .2s all ease-in-out
+}
+
+.Link:hover {
+  color: rgba(190, 190, 190, .2);
+}
+
+/* Coin Page */
+.CoinAll {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.CoinWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: .5rem;
+}
+
+.CoinImage {
+  margin: .5rem;
+}
+
+.CoinContent {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, .2);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.CoinName {
+  font-weight: bold;
+}
+
+p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CoinRank {
+  opacity: .4;
+  font-style: italic;
+}
+
+.CoinInfo {
+  display: flex;
+  height: 10rem;
+  justify-content: center;
+  text-align: center;
+  overflow: scroll;
+}
