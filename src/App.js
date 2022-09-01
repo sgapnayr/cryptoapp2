@@ -115,6 +115,7 @@ function App() {
   };
 
   const pathname = window.location.pathname
+
   return (
 
     <div className="App">

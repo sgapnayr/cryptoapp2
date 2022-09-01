@@ -124,7 +124,7 @@ export const Charts = styled.div`
 /* COIN TABLE */
 export const CoinTable = styled.div`
     border-radius: 5px;
-    padding: 0 0 1rem 0;
+    padding: .5rem 0 1rem 0;
     margin: 2rem .5rem -1rem .5rem;
     box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.3);
     width: 85%;
