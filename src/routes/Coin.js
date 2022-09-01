@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 const Coin = ({ image }) => {
     const [coin, setCoin] = useState({});
+    const [content, setContent] = useState(false)
     const params = useParams();
 
     const url = `https://api.coingecko.com/api/v3/coins/${params.coinId}`;
@@ -20,24 +21,23 @@ const Coin = ({ image }) => {
         getData()
     }, [])
 
+    const showContent = () => {
+        setContent(!content)
+    }
+
     return <>
         <div className="CoinAll">
-
             <Link to='/'>
                 <div className="Link">
                     Go Back
                 </div>
             </Link>
-
-
             <div className="CoinTitle">
                 <h1>
                     {coin.name}
                 </h1>
             </div>
-
             <div className="CoinWrapper">
-
                 <div className="CoinContent">
                     <div className="CoinImage">
                         {coin.image ? <img src={coin.image.small} alt="..." /> : null}
@@ -47,10 +47,11 @@ const Coin = ({ image }) => {
                     <div className="CoinRank">
                         Rank # {coin.market_cap_rank}
                     </div>
-                    {/* <div className="CoinInfo">
-                        {coin.description.en}
-                    </div> */}
                 </div>
+            </div>
+            <div className="CoinInfo">
+                {content && coin?.description?.en.length > 200 ? coin?.description?.en.slice(0, 250) + '...' : coin?.description?.en}
+                <button onClick={showContent}>Show more</button>
             </div>
             {/* <div className="CoinInfo">
                 <p className="CoinName Info">Market Cap:</p>
@@ -58,30 +59,30 @@ const Coin = ({ image }) => {
                 <p className="CoinName Info">Circulating Supply:</p>
                 <p>{coin.market_data.circulating_supply}</p>
             </div> */}
-            {/* <div className="Content">
-            <table>
-                <thead>
-                    <tr>
-                        <th>1h</th>
-                        <th>24h</th>
-                        <th>7d</th>
-                        <th>14d</th>
-                        <th>30d</th>
-                        <th>1yr</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>{coin.market_data.price_change_percentage_1h_in_currency.usd}</td>
-                        <td>{coin.market_data.price_change_percentage_24h_in_currency.usd}</td>
-                        <td>{coin.market_data.price_change_percentage_7d_in_currency.usd}</td>
-                        <td>{coin.market_data.price_change_percentage_14d_in_currency.usd}</td>
-                        <td>{coin.market_data.price_change_percentage_30d_in_currency.usd}</td>
-                        <td>{coin.market_data.price_change_percentage_1y_in_currency.usd}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div> */}
+            {/* <div className="CoinPercentage">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>1h</th>
+                            <th>24h</th>
+                            <th>7d</th>
+                            <th>14d</th>
+                            <th>30d</th>
+                            <th>1yr</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{coin?.market_data.price_change_percentage_1h_in_currency?.usd}</td>
+                            <td>{coin?.market_data.price_change_percentage_24h_in_currency?.usd}</td>
+                            <td>{coin?.market_data.price_change_percentage_7d_in_currency?.usd}</td>
+                            <td>{coin?.market_data.price_change_percentage_14d_in_currency?.usd}</td>
+                            <td>{coin?.market_data.price_change_percentage_30d_in_currency?.usd}</td>
+                            <td>{coin?.market_data.price_change_percentage_1y_in_currency?.usd}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> */}
             {/* <div className="content">
             <div className="stats">
                 <div className="left">
